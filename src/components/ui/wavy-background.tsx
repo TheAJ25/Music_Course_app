@@ -35,6 +35,7 @@ export const WavyBackground = ({
     ctx: any,
     canvas: any;
   const canvasRef = useRef<HTMLCanvasElement>(null);
+
   const getSpeed = () => {
     switch (speed) {
       case "slow":
@@ -61,13 +62,6 @@ export const WavyBackground = ({
     render();
   };
 
-  const waveColors = colors ?? [
-    "#38bdf8",
-    "#818cf8",
-    "#c084fc",
-    "#e879f9",
-    "#22d3ee",
-  ];
   const drawWave = (n: number) => {
     nt += getSpeed();
     for (i = 0; i < n; i++) {
@@ -108,6 +102,14 @@ export const WavyBackground = ({
         !navigator.userAgent.includes("Chrome")
     );
   }, []);
+
+  const waveColors = colors ?? [
+    "#38bdf8",
+    "#818cf8",
+    "#c084fc",
+    "#e879f9",
+    "#22d3ee",
+  ];
 
   return (
     <div
